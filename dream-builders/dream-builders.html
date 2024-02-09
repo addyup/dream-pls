@@ -96,7 +96,7 @@
                     </label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-secondary my-2 my-sm-0">submit</button>
+                <button type="submit" class="btn btn-secondary my-2 my-sm-0" onclick="submitForm()">submit</button>
               </form>
 
 
@@ -109,9 +109,13 @@
 
 
   <script>
-      let homepageForm = document.getElementById("homepageForm");
-      console.log(homepageForm); //able to get the homepage attribute
-      //capture attributes and log them onSubmit
+    function submitForm() {
+      const homepageForm = document.getElementById("homepageForm");
+      homepageForm.addEventListener('submit', (event) =>{
+        event.preventDefault();
+      })
+      
+    }
 
 
   </script>
