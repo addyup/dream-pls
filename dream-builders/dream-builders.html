@@ -110,9 +110,10 @@
 
   <script>
       let homepageForm = document.getElementById("homepageForm");
-
+      console.log(homepageForm); //able to get the homepage attribute
       homepageForm.addEventListener("submit", (e) => {
 e.preventDefault();
+
 
   let builderType = document.getElementById("builderType");
   let countryType = document.getElementById("countryType");
