@@ -113,8 +113,11 @@
       const homepageForm = document.getElementById("homepageForm");
       homepageForm.addEventListener('submit', (event) =>{
         event.preventDefault();
+        //capture the elements here
+        const builderType = document.getElementById("builderType");
+        console.log(`${builderType.value}`);
       })
-      
+      //add post call here
     }
 
 
