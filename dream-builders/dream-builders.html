@@ -50,7 +50,7 @@
                 <div class="row justify-content-center">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">What do you build?</label>
-                    <input type="builderTypeDesc" class="form-control" id="builderType" placeholder="What do you build?">
+                    <input type="text" class="form-control" id="builderType" placeholder="What do you build?">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputisBorC">countryType</label>
@@ -96,7 +96,7 @@
                     </label>
                   </div>
                 </div>
-                <button type="submitForm" class="btn btn-secondary my-2 my-sm-0">submit</button>
+                <button type="submit" class="btn btn-secondary my-2 my-sm-0">submit</button>
               </form>
 
 
@@ -108,7 +108,37 @@
 
 
 
-  <script src="homepageForm.js"></script>
+  <script>
+      let homepageForm = document.getElementById("homepageForm");
+
+      homepageForm.addEventListener("submit", (e) => {
+e.preventDefault();
+
+  let builderType = document.getElementById("builderType");
+  let countryType = document.getElementById("countryType");
+  let inputEmail = document.getElementById("inputEmail");
+  let inputWebsite = document.getElementById("inputWebsite");
+  let inputFulllName = document.getElementById("inputFulllName");
+  let inputisBorC = document.getElementById("inputisBorC");
+  let inputZip = document.getElementById("inputZip");
+  let inputRefer = document.getElementById("inputRefer");
+
+if (builderType.value == "" || inputRefer.value == "") {
+  alert("Ensure you input a value in both fields!");
+} else {
+  // perform operation with form input
+  alert("This form has been successfully submitted!");
+  console.log(
+    `This form has a builderType of ${builderType.value} and inputRefer of ${inputRefer.value}`
+  );
+
+  builderType.value = "";
+  inputRefer.value = "";
+}
+});
+
+
+  </script>
     
 </body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
