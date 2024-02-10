@@ -5,7 +5,7 @@
     <title>Document</title>
 </head>
 
-
+<!-- site live at https://addyup.github.io/dream-pls/dream-builders/dream-builders.html -->
 <body class="p-3 mb-2 bg-light text-white">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="#">Builders</a>
@@ -36,7 +36,7 @@
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0" id="homepageForm">
+          <form class="form-inline my-2 my-lg-0" id="finderForm">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Find</button>
           </form>
@@ -46,11 +46,11 @@
       <div class="heading">
         <h2 style="color: black; text-align: center;">fill out the form if you're a builder to create your page, your next opportunity is waiting...</h2>
       </div>
-            <form class="col-lg-6 offset-lg-3" action="" id="homepageForm">
+            <form class="col-lg-6 offset-lg-3" id="homepageForm">
                 <div class="row justify-content-center">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">What do you build?</label>
-                    <input type="text" class="form-control" id="builderType" placeholder="What do you build?">
+                    <input type="text" class="form-control" id="builderType" placeholder="What do you build?" required>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputisBorC">countryType</label>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputAddress">Email</label>
-                  <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                  <input type="text" class="form-control" id="inputEmail" placeholder="Email" required>
                 </div>
                 <div class="form-group">
                   <label for="inputAddress2">Website Link (if applicable)</label>
@@ -72,7 +72,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputCity">Full Name</label>
-                    <input type="text" class="form-control" id="inputFulllName" placeholder="Full Name">
+                    <input type="text" class="form-control" id="inputFulllName" placeholder="Full Name" required>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputisBorC">isBorC</label>
@@ -84,23 +84,23 @@
                     </select>
                   </div>
                   <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
+                    <label for="inputZip">Zip</label required>
                     <input type="text" class="form-control" id="inputZip" placeholder="Zip Code">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="inputRefer">
+                    <input class="referFriend form-check-input" type="checkbox" id="inputRefer">
                     <label class="form-check-label" for="gridCheck" style="color: black;">
                       Refer a friend. (you can add colleagues in your profile later)
                     </label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-secondary my-2 my-sm-0" onclick="submitForm()">submit</button>
+                <button type="submitHomepageForm" class="btn btn-secondary my-2 my-sm-0">submit</button>
               </form>
 
 
-  <!-- read https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
+  <!-- read 
   getElements on submit
   submit elements to javaApi -->
 
@@ -109,21 +109,28 @@
 
 
   <script>
-    function submitForm() {
-      const homepageForm = document.getElementById("homepageForm");
-      homepageForm.addEventListener('submit', (event) =>{
-        event.preventDefault();
-        // https://www.shecodes.io/athena/3609-how-to-submit-a-form-and-send-data-to-an-api-using-javascript
-        //capture the elements here
-        
-        
-      })
-      //capture the elements here
-      const builderType = document.getElementById("builderType");
-      console.log(`${builderType.value}`);
-    }
+    let homepageForm = document.getElementById("homepageForm");
+    console.log(`${homepageForm.value}`);
+    
+    homepageForm.addEventListener("submitHomepageForm", (postData) => {
+      postData.preventDefault();
 
+      let inputRefer = document.getElementById("inputRefer");
+      console.log(`${inputRefer.value}`);
 
+      if(inputRefer.value == "") {
+        //throw error
+        alert("Insure that you have all required fields!");
+      }
+      else {
+        //perform operation input
+        alert("Form has been successfully submitted");
+        console.log(
+          `This form has a inputRefer of ${inputRefer.value}`
+        );
+        inputRefer.value = "";
+      }
+    });
   </script>
     
 </body>
