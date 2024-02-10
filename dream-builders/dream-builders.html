@@ -117,37 +117,35 @@ function submit_by_id() {
   var inputEmail = document.getElementById("inputEmail").value;
   var inputWebsite = document.getElementById("inputWebsite").value;
   var inputFullName = document.getElementById("inputFullName").value;
-  // var inputisBorC = document.getElementById("inputisBorC").value;
-  // var inputZip = document.getElementById("inputZip").value;
+  var inputisBorC = document.getElementById("inputisBorC").value;
+  var inputZip = document.getElementById("inputZip").value;
   var inputRefer = document.getElementById("inputRefer").value;
   
   
 
 document.getElementById("homepageForm").submit(); 
 
-alert(
-  inputRefer + " " + inputEmail + " " + builderType + " " + countryType + " " + inputFullName + " " + inputWebsite + inputFullName +
-document.getElementById("homepageForm").getAttribute("id") + " Form Submitted Successfully......"
+alert("Email sent to " + document.getElementById("inputEmail").value + "Please Check your inbox for further details."
 );
 
 //now that we have loaded the data, we can post the data to the api
 //get all elements
 //post all elements
 
-    // $.post("http://localhost:8080/homepageFormSubmission",
-    // {
-    //     builderType:"builderType",
-    //     countryType:"countryType",
-    //     inputEmail:email,
-    //     inputWebsite:"inputWebsite",
-    //     inputFullName:"inputFullName",
-    //     inputisBorC:"inputisBorC",
-    //     inputZip:"inputZip",
-    //     inputRefer:inputRefer
-    // },
-    // function(data,status){
-    //   alert("Data: " + data + "\nStatus: " + status);
-    // });
+    $.post("http://localhost:8080/homepageFormSubmission",
+    {
+        builderType: document.getElementById("builderType").value,
+        countryType: document.getElementById("countryType").value,
+        inputEmail: document.getElementById("inputEmail").value,
+        inputWebsite: document.getElementById("inputWebsite").value,
+        inputFullName: document.getElementById("inputFullName").value,
+        inputisBorC: document.getElementById("inputisBorC").value,
+        inputZip: document.getElementById("inputZip").value,
+        inputRefer: document.getElementById("inputRefer").value
+    },
+    function(data,status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
 }
 
 
