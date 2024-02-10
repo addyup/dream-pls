@@ -115,7 +115,7 @@ function submit_by_id() {
   var countryType = document.getElementById("countryType").value;
   var inputEmail = document.getElementById("inputEmail").value;
   var inputWebsite = document.getElementById("inputWebsite").value;
-  // var inputFullName = document.getElementById("inputFullName").value;
+  var inputFullName = document.getElementById("inputFullName").value;
   // var inputisBorC = document.getElementById("inputisBorC").value;
   // var inputZip = document.getElementById("inputZip").value;
   var inputRefer = document.getElementById("inputRefer").value;
@@ -125,7 +125,11 @@ function submit_by_id() {
 document.getElementById("homepageForm").submit(); 
 
 alert(
-  inputRefer + " " + inputEmail + " " + builderType + " " + countryType + " " + inputEmail + inputWebsite +
+  inputRefer + " " + inputEmail + " " + builderType + " " + countryType + " " + inputFullName + " " + inputWebsite 
+  + " " + inputisBorC + " " 
+  +
+  inputZip + " " 
+  +
 document.getElementById("homepageForm").getAttribute("id") + " Form Submitted Successfully......"
 );
 
