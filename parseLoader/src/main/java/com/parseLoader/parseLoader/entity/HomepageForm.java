@@ -11,7 +11,7 @@ public class HomepageForm {
   private String inputFullName;
   private String inputisBorC;
   private String inputZip;
-  private boolean inputRefer;
+  private String inputRefer;
 
   // Getter
   public String getBuilderType() {
@@ -84,12 +84,12 @@ public class HomepageForm {
   }
 
   // Getter
-  public boolean getInputRefer() {
+  public String getInputRefer() {
     return inputRefer;
   }
 
   // Setter
-  public void setInputRefer(boolean inputRefer) {
+  public void setInputRefer(String inputRefer) {
     this.inputRefer = inputRefer;
   }
 }

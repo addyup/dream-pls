@@ -109,35 +109,17 @@
 
 
   <script>
-
-// function validation(){
-//   var inputRefer = document.getElementById("inputRefer").value;
-//   var email = document.getElementById("inputEmail").value;
-
-// //figure email syntax 
-// var emailReg = `/^([w-.]`+ `@([w-]`+ `.)` + `[w-]{2,4})?$/`;
-// if( inputRefer ==='' || email ===''){
-// alert("Please fill all fields...!!!!!!");
-// return false;
-// }else if(!(email).match(emailReg)){
-// alert("Invalid Email...!!!!!!");
-// return false;
-// }else{
-// return true;
-// }
-// }
-
-    // Submit form with id function.
-    //works
 function submit_by_id() {
+
   var inputRefer = document.getElementById("inputRefer").value;
   var email = document.getElementById("inputEmail").value;
-// if (validation()) // Calling validation function
-// {
-document.getElementById("homepageForm").submit(); //form submission
+document.getElementById("homepageForm").submit(); 
+
 alert(" Input Refer : " + inputRefer + " n Email : " + email + " n Form Id : " + document.getElementById("homepageForm").getAttribute("id") + "nn Form Submitted Successfully......");
-// }
-//post data to localhost api
+
+//now that we have loaded the data, we can post the data to the api
+//get all elements
+//post all elements
 }
 
 
