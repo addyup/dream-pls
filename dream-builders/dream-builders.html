@@ -111,15 +111,42 @@
   <script>
 function submit_by_id() {
 
+  var builderType = document.getElementById("builderType").value;
+  var countryType = document.getElementById("countryType").value;
+  var inputEmail = document.getElementById("inputEmail").value;
+  // var inputWebsite = document.getElementById("inputWebsite").value;
+  // var inputFullName = document.getElementById("inputFullName").value;
+  // var inputisBorC = document.getElementById("inputisBorC").value;
+  // var inputZip = document.getElementById("inputZip").value;
   var inputRefer = document.getElementById("inputRefer").value;
-  var email = document.getElementById("inputEmail").value;
+  
+  
+
 document.getElementById("homepageForm").submit(); 
 
-alert(" Input Refer : " + inputRefer + " n Email : " + email + " n Form Id : " + document.getElementById("homepageForm").getAttribute("id") + "nn Form Submitted Successfully......");
+alert(
+  inputRefer + " " + inputEmail + " " + builderType + " " + countryType + " " +
+document.getElementById("homepageForm").getAttribute("id") + " Form Submitted Successfully......"
+);
 
 //now that we have loaded the data, we can post the data to the api
 //get all elements
 //post all elements
+
+    // $.post("http://localhost:8080/homepageFormSubmission",
+    // {
+    //     builderType:"builderType",
+    //     countryType:"countryType",
+    //     inputEmail:email,
+    //     inputWebsite:"inputWebsite",
+    //     inputFullName:"inputFullName",
+    //     inputisBorC:"inputisBorC",
+    //     inputZip:"inputZip",
+    //     inputRefer:inputRefer
+    // },
+    // function(data,status){
+    //   alert("Data: " + data + "\nStatus: " + status);
+    // });
 }
 
 
