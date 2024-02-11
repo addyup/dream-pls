@@ -7,6 +7,9 @@
 
 <!-- site live at https://addyup.github.io/dream-pls/dream-builders/dream-builders.html -->
 <!-- testing URL file:///Users/adwaituprety/Documents/notDB/dream-builders/dream-builders.html -->
+
+
+
 <body class="p-3 mb-2 bg-light text-white">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="#">Builders</a>
@@ -50,11 +53,11 @@
             <form class="col-lg-6 offset-lg-3" id="homepageForm">
                 <div class="row justify-content-center">
                   <div class="form-group col-md-6">
-                    <label for="inputEmail4">What do you build?</label>
+                    <label for="inputEmail4" class="textBlack">What do you build?</label>
                     <input type="text" class="form-control" id="builderType" placeholder="What do you build?" required>
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputisBorC">countryType</label>
+                    <label for="inputisBorC" class="textBlack">countryType</label>
                     <select id="countryType" class="form-control">
                       <option selected>Country</option>
                       <option>US</option>
@@ -63,20 +66,20 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputAddress">Email</label>
+                  <label for="inputAddress" class="textBlack">Email</label>
                   <input type="text" class="form-control" id="inputEmail" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                  <label for="inputAddress2">Website Link (if applicable)</label>
+                  <label for="inputAddress2" class="textBlack">Website Link (if applicable)</label>
                   <input type="text" class="form-control" id="inputWebsite" placeholder="Website Link (if applicable)">
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputCity">Full Name</label>
+                    <label for="inputCity" class="textBlack">Full Name</label>
                     <input type="text" class="form-control" id="inputFulllName" placeholder="Full Name" required>
                   </div>
                   <div class="form-group col-md-4">
-                    <label for="inputisBorC">isBorC</label>
+                    <label for="inputisBorC" class="textBlack">isBorC</label>
                     <select id="inputisBorC" class="form-control">
                       <option selected>Builder Type</option>
                       <option>Physical Builder</option>
@@ -85,16 +88,14 @@
                     </select>
                   </div>
                   <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label required>
+                    <label for="inputZip" class="textBlack">Zip</label required>
                     <input type="text" class="form-control" id="inputZip" placeholder="Zip Code">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="form-check">
                     <input class="referFriend form-check-input" type="checkbox" id="inputRefer">
-                    <label class="form-check-label" for="gridCheck" style="color: black;">
-                      Refer a friend. (you can add colleagues in your profile later)
-                    </label>
+                    <label class="textBlack form-check-label" for="gridCheck">Refer a friend. (you can add colleagues in your profile later)</label>
                   </div>
                 </div>
                 <button type="submitHomepageForm" class="btn btn-secondary my-2 my-sm-0" onclick="submit_by_id()">submit</button>
@@ -104,28 +105,12 @@
   <!-- read 
   getElements on submit
   submit elements to javaApi -->
-
-  
-
-
-
-  <script>
+<script>
 function submit_by_id() {
-
-  var builderType = document.getElementById("builderType").value;
-  var countryType = document.getElementById("countryType").value;
-  var inputEmail = document.getElementById("inputEmail").value;
-  var inputWebsite = document.getElementById("inputWebsite").value;
-  var inputFullName = document.getElementById("inputFullName").value;
-  var inputisBorC = document.getElementById("inputisBorC").value;
-  var inputZip = document.getElementById("inputZip").value;
-  var inputRefer = document.getElementById("inputRefer").value;
   
-  
+  document.getElementById("homepageForm").submit(); 
 
-document.getElementById("homepageForm").submit(); 
-
-alert("Email sent to " + document.getElementById("inputEmail").value + "Please Check your inbox for further details."
+alert("Email sent to " + document.getElementById("inputEmail").value + " " + document.getElementById("inputEmail").value + "Please Check your inbox for further details."
 );
 
 //now that we have loaded the data, we can post the data to the api
@@ -152,6 +137,7 @@ alert("Email sent to " + document.getElementById("inputEmail").value + "Please C
   </script>
     
 </body>
+<link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
 
