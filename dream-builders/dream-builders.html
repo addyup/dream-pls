@@ -11,41 +11,8 @@
 
 
 <body class="p-3 mb-2 bg-light text-white">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="#">Builders</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Locate a Builder</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">How can I become a builder?</a>
-                <a class="dropdown-item" href="#">How can I refer a builder?</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">How do I apply as a builder?</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0" id="finderForm">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Find</button>
-          </form>
-        </div>
-      </nav>
+    <dream-nav></dream-nav>
+    <script src="js/dream-nav.js"></script>
       <br>
       <div class="heading">
         <h2 style="color: black; text-align: center;">fill out the form if you're a builder to create your page, your next opportunity is waiting...</h2>
@@ -105,36 +72,7 @@
   <!-- read 
   getElements on submit
   submit elements to javaApi -->
-<script>
-function submit_by_id() {
-  
-  document.getElementById("homepageForm").submit(); 
-
-alert("Email sent to " + document.getElementById("inputEmail").value + " " + document.getElementById("inputEmail").value + "Please Check your inbox for further details."
-);
-
-//now that we have loaded the data, we can post the data to the api
-//get all elements
-//post all elements
-
-    $.post("http://localhost:8080/homepageFormSubmission",
-    {
-        builderType: document.getElementById("builderType").value,
-        countryType: document.getElementById("countryType").value,
-        inputEmail: document.getElementById("inputEmail").value,
-        inputWebsite: document.getElementById("inputWebsite").value,
-        inputFullName: document.getElementById("inputFullName").value,
-        inputisBorC: document.getElementById("inputisBorC").value,
-        inputZip: document.getElementById("inputZip").value,
-        inputRefer: document.getElementById("inputRefer").value
-    },
-    function(data,status){
-      alert("Data: " + data + "\nStatus: " + status);
-    });
-}
-
-
-  </script>
+<script src="js/homepageFormSubmission.js"></script>
     
 </body>
 <link rel="stylesheet" href="styles.css">
