@@ -1,15 +1,9 @@
-function submit_by_id() {
-  
+function postHomepageDetailsToServerFor_InitialHomepage() {
+
     document.getElementById("homepageForm").submit(); 
-  
-  alert("Email sent to " + document.getElementById("inputEmail").value + " " + "Please Check your inbox for further details."
-  );
-  
-  //now that we have loaded the data, we can post the data to the api
-  //get all elements
-  //post all elements
-  
-      $.post("http://localhost:8080/homepageFormSubmission",
+
+    //add working fetch call here
+  $.post("http://localhost:8080/homepageFormSubmission",
       {
           builderType: document.getElementById("builderType").value,
           countryType: document.getElementById("countryType").value,
@@ -23,4 +17,8 @@ function submit_by_id() {
       function(data,status){
         alert("Data: " + data + "\nStatus: " + status);
       });
-  }
+
+      alert("Email sent to " + document.getElementById("inputEmail").value + " " + "Please Check your inbox for further details."
+  );
+
+    }
