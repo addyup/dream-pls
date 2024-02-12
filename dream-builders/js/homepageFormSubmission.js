@@ -12,7 +12,7 @@ function sumbitFormDetailsToPostAPI_HOMEPAGEDetails() {
     let inputRefer = document.getElementById("inputRefer");
 //add alert after http response is successful
 
-  fetch('http://localhost:8080/homepageFormSubmission', {
+   fetch('http://localhost:8080/homepageFormSubmission', {
   method: 'POST',
   body: 
   JSON.stringify(
@@ -32,12 +32,11 @@ function sumbitFormDetailsToPostAPI_HOMEPAGEDetails() {
   },
 });
 
- 
+  alert("Email sent to " + document.getElementById("inputEmail").value + " " + "Please Check your inbox for further details.");
+ if(response == '200') {
+  alert("Email sent to " + document.getElementById("inputEmail").value + " " + "Please Check your inbox for further details.");
+ }
 
 }
-
-// function postHomepageDetailsToServerFor_InitialHomepage() {
-//   alert("Email sent to " + document.getElementById("inputEmail").value + " " + "Please Check your inbox for further details.");
-// }
 
     
