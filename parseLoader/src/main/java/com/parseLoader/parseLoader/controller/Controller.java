@@ -18,7 +18,6 @@ public class Controller {
     @CrossOrigin
     public ResponseEntity<HomepageForm> getHomepageFormSubmission(@RequestBody HomepageForm homepageForm) {
         
-
         logger.info("response for Homepageform ===> " + homepageForm.getBuilderType()
         + " " + homepageForm.getInputEmail() + " " + homepageForm.getInputFullName()
         + " " + homepageForm.getInputWebsite() + " " + homepageForm.getInputZip() 

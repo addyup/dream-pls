@@ -3,7 +3,6 @@ package com.parseLoader.parseLoader.entity;
 
 public class HomepageForm {
 
-    
   private String builderType;
   private String countryType;
   private String inputEmail;
