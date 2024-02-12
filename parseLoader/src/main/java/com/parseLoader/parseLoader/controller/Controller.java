@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.parseLoader.parseLoader.entity.HomepageForm;
 
 @RestController
@@ -17,12 +18,19 @@ public class Controller {
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
     @PostMapping(path= "/homepageFormSubmission", consumes = "application/json", produces = "application/json")
     @CrossOrigin
-    public ResponseEntity<HomepageForm> getHomepageFormSubmission(@RequestBody HomepageForm homepageForm) {
+    public ResponseEntity<HomepageForm> getHomepageFormSubmission(@RequestBody HomepageForm homepageForm) throws JsonProcessingException {
+
+        //resolve below error
+        //Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)] 
+        
+
         logger.info("response for Homepageform ===> " + homepageForm.getBuilderType()
         + " " + homepageForm.getInputEmail() + " " + homepageForm.getInputFullName()
         + " " + homepageForm.getInputWebsite() + " " + homepageForm.getInputZip() 
         + " " + homepageForm.getInputisBorC() + " " + homepageForm.getCountryType() 
-        + " " + homepageForm.getInputRefer());
+        + " " + homepageForm.getInputRefer()
+        );
+
         return ResponseEntity.ok().build();
 
     }
