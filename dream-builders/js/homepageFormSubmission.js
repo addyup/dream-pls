@@ -1,24 +1,31 @@
+function sumbitFormDetailsToPostAPI_HOMEPAGEDetails() {
+
+  document.getElementById("homepageForm").submit(); 
+
+  
+  fetch('http://localhost:8080/homepageFormSubmission', {
+  method: 'POST',
+  body: JSON.stringify({
+    builderType: document.getElementById("builderType"), 
+    countryType: document.getElementById("countryType"),
+    inputEmail: document.getElementById("inputEmail"),
+    inputWebsite: document.getElementById("inputWebsite"),
+    inputFulllName: document.getElementById("inputFulllName"),
+    inputisBorC: document.getElementById("inputisBorC"),
+    inputZip: document.getElementById("inputZip"),
+    inputRefer: document.getElementById("inputRefer"),
+  }),
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+ 
+
+}
+
 function postHomepageDetailsToServerFor_InitialHomepage() {
+  alert("Email sent to " + document.getElementById("inputEmail").value + " " + "Please Check your inbox for further details.");
+}
 
-    document.getElementById("homepageForm").submit(); 
-
-    //add working fetch call here
-  $.post("http://localhost:8080/homepageFormSubmission",
-      {
-          builderType: document.getElementById("builderType").value,
-          countryType: document.getElementById("countryType").value,
-          inputEmail: document.getElementById("inputEmail").value,
-          inputWebsite: document.getElementById("inputWebsite").value,
-          inputFullName: document.getElementById("inputFullName").value,
-          inputisBorC: document.getElementById("inputisBorC").value,
-          inputZip: document.getElementById("inputZip").value,
-          inputRefer: document.getElementById("inputRefer").value
-      },
-      function(data,status){
-        alert("Data: " + data + "\nStatus: " + status);
-      });
-
-      alert("Email sent to " + document.getElementById("inputEmail").value + " " + "Please Check your inbox for further details."
-  );
-
-    }
+    
