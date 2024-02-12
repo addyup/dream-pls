@@ -33,7 +33,7 @@ class Navigation extends HTMLElement {
     "            </li>\n" + //
     "          </ul>\n" + //
     "          <form class=\"form-inline my-2 my-lg-0\" id=\"finderForm\">\n" + //
-    "            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n" + //
+    "            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\" id=\"search\">\n" + //
     "            <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Find</button>\n" + //
     "          </form>\n" + //
     "        </div>\n" + //

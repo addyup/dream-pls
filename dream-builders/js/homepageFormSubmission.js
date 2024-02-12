@@ -2,33 +2,19 @@ function sumbitFormDetailsToPostAPI_HOMEPAGEDetails() {
 
   document.getElementById("homepageForm").submit(); 
 
-    
-//add alert after http response is successful
-
-   fetch('http://localhost:8080/homepageFormSubmission', {
-  method: 'POST',
-  body: 
-  JSON.stringify(
+     $.post("http://localhost:8080/homepageFormSubmission",
     {
-    builderType: builderType, 
-    countryType: countryType,
-    inputEmail: inputEmail,
-    inputWebsite: inputWebsite,
-    inputFulllName: inputFulllName,
-    inputisBorC: inputisBorC,
-    inputZip: inputZip,
-    inputRefer: inputRefer,
-  }
-  ),
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
-  alert("Email sent to " + document.getElementById("inputEmail").value + " " + "Please Check your inbox for further details.");
- if(response == '200') {
-  alert("Email sent to " + document.getElementById("inputEmail").value + " " + "Please Check your inbox for further details.");
- }
-
+      builderType: document.getElementById("builderType").value, 
+      countryType: document.getElementById("countryType").value,
+      inputEmail: document.getElementById("inputEmail").value,
+      inputWebsite: document.getElementById("inputWebsite").value,
+      inputFulllName: document.getElementById("inputFullName").value,
+      inputisBorC: document.getElementById("inputisBorC").value,
+      inputZip: document.getElementById("inputZip").value,
+      inputRefer: document.getElementById("inputRefer").value,
+    },
+    function(data,status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
 }
 
