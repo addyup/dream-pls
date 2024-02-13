@@ -1,1 +1,1 @@
-//connect to db here
+// https://www.oracle.com/database/technologies/appdev/quickstartnodeonprem.html#macos-tab
