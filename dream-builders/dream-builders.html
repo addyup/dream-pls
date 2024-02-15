@@ -19,7 +19,7 @@
       <div class="heading">
         <h2 style="color: black; text-align: center;">fill out the form if you're a builder to create your page, your next opportunity is waiting...</h2>
       </div>
-            <form class="col-lg-6 offset-lg-3" id="homepageForm">
+            <form class="col-lg-6 offset-lg-3" id="homepageForm" action="http://localhost:3000/sign_up" method="post">
                 <div class="row justify-content-center">
                   <div class="form-group col-md-6">
                     <label class="textBlack">What do you build?</label>
@@ -67,7 +67,8 @@
                     <label class="textBlack form-check-label" >Refer a friend. (you can add colleagues in your profile later)</label>
                   </div>
                 </div>
-                <button type="submitHomepageForm" class="btn btn-secondary my-2 my-sm-0" onclick="sumbitFormDetailsToPostAPI_HOMEPAGEDetails()">submit</button>
+                <button type="submit" id="submitDetails" 
+                name="submitDetails" value="Submit" class="btn btn-secondary my-2 my-sm-0">submit</button>
               </form>
 
 
@@ -75,7 +76,7 @@
   getElements on submit
   submit elements to javaApi -->
 
-<script src="repo/saveHomepageForm.js"></script>
+<script src="repo/saveForm.js"></script>
     
 </body>
 <link rel="stylesheet" href="styles.css">
