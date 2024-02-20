@@ -1,2 +1,2 @@
-# create a form following these steps 
-# https://spring.io/guides/gs/handling-form-submission
+# create a form CRUD app following these steps 
+# https://www.baeldung.com/spring-boot-crud-thymeleaf
